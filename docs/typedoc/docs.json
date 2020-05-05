@@ -1,0 +1,8322 @@
+{
+	"id": 0,
+	"name": "reversi",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 47,
+			"name": "Direction",
+			"kind": 4,
+			"kindString": "Enumeration",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "方向"
+			},
+			"children": [
+				{
+					"id": 49,
+					"name": "down",
+					"kind": 16,
+					"kindString": "Enumeration member",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 80,
+							"character": 8
+						}
+					],
+					"defaultValue": "1"
+				},
+				{
+					"id": 54,
+					"name": "downLeft",
+					"kind": 16,
+					"kindString": "Enumeration member",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 85,
+							"character": 12
+						}
+					],
+					"defaultValue": "6"
+				},
+				{
+					"id": 55,
+					"name": "downRight",
+					"kind": 16,
+					"kindString": "Enumeration member",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 86,
+							"character": 13
+						}
+					],
+					"defaultValue": "7"
+				},
+				{
+					"id": 50,
+					"name": "left",
+					"kind": 16,
+					"kindString": "Enumeration member",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 81,
+							"character": 8
+						}
+					],
+					"defaultValue": "2"
+				},
+				{
+					"id": 51,
+					"name": "right",
+					"kind": 16,
+					"kindString": "Enumeration member",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 82,
+							"character": 9
+						}
+					],
+					"defaultValue": "3"
+				},
+				{
+					"id": 48,
+					"name": "up",
+					"kind": 16,
+					"kindString": "Enumeration member",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 79,
+							"character": 6
+						}
+					],
+					"defaultValue": "0"
+				},
+				{
+					"id": 52,
+					"name": "upLeft",
+					"kind": 16,
+					"kindString": "Enumeration member",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 83,
+							"character": 10
+						}
+					],
+					"defaultValue": "4"
+				},
+				{
+					"id": 53,
+					"name": "upRight",
+					"kind": 16,
+					"kindString": "Enumeration member",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 84,
+							"character": 11
+						}
+					],
+					"defaultValue": "5"
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumeration members",
+					"kind": 16,
+					"children": [
+						49,
+						54,
+						55,
+						50,
+						51,
+						48,
+						52,
+						53
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+					"line": 78,
+					"character": 29
+				}
+			]
+		},
+		{
+			"id": 395,
+			"name": "Disk",
+			"kind": 4,
+			"kindString": "Enumeration",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 397,
+					"name": "dark",
+					"kind": 16,
+					"kindString": "Enumeration member",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 188,
+							"character": 6
+						}
+					],
+					"defaultValue": "\"d\""
+				},
+				{
+					"id": 396,
+					"name": "light",
+					"kind": 16,
+					"kindString": "Enumeration member",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 187,
+							"character": 7
+						}
+					],
+					"defaultValue": "\"l\""
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumeration members",
+					"kind": 16,
+					"children": [
+						397,
+						396
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 186,
+					"character": 16
+				}
+			]
+		},
+		{
+			"id": 176,
+			"name": "Board",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "盤",
+				"text": "2次元配列のラッパークラス\n空のセルにはnullが入っている\n\n"
+			},
+			"typeParameter": [
+				{
+					"id": 177,
+					"name": "T",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {
+						"isExported": true
+					}
+				}
+			],
+			"children": [
+				{
+					"id": 179,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 180,
+							"name": "new Board",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 181,
+									"name": "boardCore",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 116,
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											}
+										],
+										"name": "BoardCore"
+									}
+								},
+								{
+									"id": 182,
+									"name": "skipCopy",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true,
+										"isOptional": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 328,
+										"name": "SkipCopy"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 176,
+								"name": "Board"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 100,
+							"character": 13
+						}
+					]
+				},
+				{
+					"id": 187,
+					"name": "values",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"comment": {
+						"shortText": "盤面の生データ取得",
+						"text": "コピーを返す。要素を変更しても盤面には影響しない\n"
+					},
+					"getSignature": [
+						{
+							"id": 188,
+							"name": "__get",
+							"kind": 524288,
+							"kindString": "Get signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "盤面の生データ取得",
+								"text": "コピーを返す。要素を変更しても盤面には影響しない\n"
+							},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "array",
+									"elementType": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "null"
+											},
+											{
+												"type": "unknown",
+												"name": "T"
+											}
+										]
+									}
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 109,
+							"character": 14
+						}
+					]
+				},
+				{
+					"id": 183,
+					"name": "xSize",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"getSignature": [
+						{
+							"id": 184,
+							"name": "__get",
+							"kind": 524288,
+							"kindString": "Get signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 102,
+							"character": 13
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 66,
+						"name": "BoardReadable.xSize"
+					}
+				},
+				{
+					"id": 185,
+					"name": "ySize",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"getSignature": [
+						{
+							"id": 186,
+							"name": "__get",
+							"kind": 524288,
+							"kindString": "Get signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 103,
+							"character": 13
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 67,
+						"name": "BoardReadable.ySize"
+					}
+				},
+				{
+					"id": 215,
+					"name": "copy",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 216,
+							"name": "copy",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "reference",
+								"id": 176,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "Board"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 130,
+							"character": 8
+						}
+					]
+				},
+				{
+					"id": 212,
+					"name": "exists",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 213,
+							"name": "exists",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 214,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 83,
+								"name": "BoardReadable.exists"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 129,
+							"character": 10
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 82,
+						"name": "BoardReadable.exists"
+					}
+				},
+				{
+					"id": 224,
+					"name": "find",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 225,
+							"name": "find",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 226,
+									"name": "check",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 227,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 228,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 229,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 230,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 132,
+													"character": 15
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"id": 331,
+										"typeArguments": [
+											{
+												"type": "union",
+												"types": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													},
+													{
+														"type": "intrinsic",
+														"name": "null"
+													}
+												]
+											}
+										],
+										"name": "ValueAndPos"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 132,
+							"character": 8
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 92,
+						"name": "BoardReadable.find"
+					}
+				},
+				{
+					"id": 231,
+					"name": "findAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 232,
+							"name": "findAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 233,
+									"name": "check",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 234,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 235,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 236,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 237,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 133,
+													"character": 18
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 331,
+									"typeArguments": [
+										{
+											"type": "union",
+											"types": [
+												{
+													"type": "typeParameter",
+													"name": "T"
+												},
+												{
+													"type": "intrinsic",
+													"name": "null"
+												}
+											]
+										}
+									],
+									"name": "ValueAndPos"
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 133,
+							"character": 11
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 99,
+						"name": "BoardReadable.findAll"
+					}
+				},
+				{
+					"id": 198,
+					"name": "forEach",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 199,
+							"name": "forEach",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 200,
+									"name": "callback",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 201,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 202,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 203,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 204,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 126,
+													"character": 21
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 126,
+							"character": 11
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 68,
+						"name": "BoardReadable.forEach"
+					}
+				},
+				{
+					"id": 238,
+					"name": "getFromDrection",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 239,
+							"name": "getFromDrection",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 240,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								},
+								{
+									"id": 241,
+									"name": "direction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 47,
+										"name": "Direction"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"id": 331,
+										"typeArguments": [
+											{
+												"type": "union",
+												"types": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													},
+													{
+														"type": "intrinsic",
+														"name": "null"
+													}
+												]
+											}
+										],
+										"name": "ValueAndPos"
+									},
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									}
+								]
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 107,
+								"name": "BoardReadable.getFromDrection"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 134,
+							"character": 19
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 106,
+						"name": "BoardReadable.getFromDrection"
+					}
+				},
+				{
+					"id": 205,
+					"name": "getValue",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 206,
+							"name": "getValue",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 207,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									},
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									}
+								]
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 76,
+								"name": "BoardReadable.getValue"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 127,
+							"character": 12
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 75,
+						"name": "BoardReadable.getValue"
+					}
+				},
+				{
+					"id": 208,
+					"name": "getValueFromXY",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 209,
+							"name": "getValueFromXY",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 210,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 57,
+										"name": "X"
+									}
+								},
+								{
+									"id": 211,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 61,
+										"name": "Y"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									},
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									}
+								]
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 79,
+								"name": "BoardReadable.getValueFromXY"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 128,
+							"character": 18
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 78,
+						"name": "BoardReadable.getValueFromXY"
+					}
+				},
+				{
+					"id": 242,
+					"name": "indexToPos",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 243,
+							"name": "indexToPos",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 244,
+									"name": "index",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 4,
+								"name": "Pos"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 111,
+								"name": "BoardReadable.indexToPos"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 135,
+							"character": 14
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 110,
+						"name": "BoardReadable.indexToPos"
+					}
+				},
+				{
+					"id": 245,
+					"name": "posToIndex",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 246,
+							"name": "posToIndex",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 247,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 114,
+								"name": "BoardReadable.posToIndex"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 136,
+							"character": 14
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 113,
+						"name": "BoardReadable.posToIndex"
+					}
+				},
+				{
+					"id": 189,
+					"name": "put",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 190,
+							"name": "put",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "盤に駒を置く (イミュータブル)\n盤上のセルに駒をおきます。下記では3x3の盤上の`(x, y)=(2, 2)`に`\"x\"`という駒を置いています。\n```javascript\nvar board = new board2d.Board<string>(3, 3);\nvar newBoard = board.put(new board2d.Pos(2, 2), 'x'); // 駒を置く\nconsole.log(board.getValue(new board2d.Pos(2, 2)));    // null(空)\nconsole.log(newBoard.getValue(new board2d.Pos(2, 2))); // x\n```",
+								"text": "メソッドの戻り値は駒を置いた結果の盤です。元のインスタンスは変更されません。そのため上記の例の場合、`board変数`の状態は変化しません。また引数の`value`に`null`を指定した場合、そのセルは空になります。"
+							},
+							"parameters": [
+								{
+									"id": 191,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								},
+								{
+									"id": 192,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 176,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "Board"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 124,
+							"character": 7
+						}
+					]
+				},
+				{
+					"id": 193,
+					"name": "putFromXY",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 194,
+							"name": "putFromXY",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 195,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 57,
+										"name": "X"
+									}
+								},
+								{
+									"id": 196,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 61,
+										"name": "Y"
+									}
+								},
+								{
+									"id": 197,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 176,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "Board"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 125,
+							"character": 13
+						}
+					]
+				},
+				{
+					"id": 217,
+					"name": "some",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 218,
+							"name": "some",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 219,
+									"name": "check",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 220,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 221,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 222,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 223,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 131,
+													"character": 15
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 131,
+							"character": 8
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 85,
+						"name": "BoardReadable.some"
+					}
+				},
+				{
+					"id": 248,
+					"name": "toMutable",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 249,
+							"name": "toMutable",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "reference",
+								"id": 255,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "BoardMutable"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 137,
+							"character": 13
+						}
+					]
+				},
+				{
+					"id": 250,
+					"name": "empty",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 251,
+							"name": "empty",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"typeParameter": [
+								{
+									"id": 252,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {
+										"isExported": true
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 253,
+									"name": "xSize",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 254,
+									"name": "ySize",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 176,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "Board"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 138,
+							"character": 16
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						179
+					]
+				},
+				{
+					"title": "Accessors",
+					"kind": 262144,
+					"children": [
+						187,
+						183,
+						185
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						215,
+						212,
+						224,
+						231,
+						198,
+						238,
+						205,
+						208,
+						242,
+						245,
+						189,
+						193,
+						217,
+						248,
+						250
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/board/board.d.ts",
+					"line": 99,
+					"character": 26
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"id": 64,
+					"typeArguments": [
+						{
+							"type": "typeParameter",
+							"name": "T"
+						}
+					],
+					"name": "BoardReadable"
+				}
+			]
+		},
+		{
+			"id": 116,
+			"name": "BoardCore",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"typeParameter": [
+				{
+					"id": 117,
+					"name": "T",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {
+						"isExported": true
+					}
+				}
+			],
+			"children": [
+				{
+					"id": 122,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"comment": {
+						"shortText": "盤のサイズを指定してインスタンスを生成します。下記は3x3の盤を作っています。\n```javascript\nvar board = new board2d.Board<string>(3, 3);\n```"
+					},
+					"signatures": [
+						{
+							"id": 123,
+							"name": "new BoardCore",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "盤のサイズを指定してインスタンスを生成します。下記は3x3の盤を作っています。\n```javascript\nvar board = new board2d.Board<string>(3, 3);\n```"
+							},
+							"parameters": [
+								{
+									"id": 124,
+									"name": "xSize",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 125,
+									"name": "ySize",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 116,
+								"name": "BoardCore"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 69,
+							"character": 36
+						}
+					]
+				},
+				{
+					"id": 121,
+					"name": "values",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 69,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "array",
+							"elementType": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "null"
+									},
+									{
+										"type": "unknown",
+										"name": "T"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"id": 119,
+					"name": "xSize",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 67,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"implementationOf": {
+						"type": "reference",
+						"id": 66,
+						"name": "BoardReadable.xSize"
+					}
+				},
+				{
+					"id": 120,
+					"name": "ySize",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 68,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"implementationOf": {
+						"type": "reference",
+						"id": 67,
+						"name": "BoardReadable.ySize"
+					}
+				},
+				{
+					"id": 174,
+					"name": "copy",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 175,
+							"name": "copy",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "reference",
+								"id": 116,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "BoardCore"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 90,
+							"character": 8
+						}
+					]
+				},
+				{
+					"id": 140,
+					"name": "exists",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 141,
+							"name": "exists",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 142,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 83,
+								"name": "BoardReadable.exists"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 83,
+							"character": 10
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 82,
+						"name": "BoardReadable.exists"
+					}
+				},
+				{
+					"id": 150,
+					"name": "find",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 151,
+							"name": "find",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 152,
+									"name": "check",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 153,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 154,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 155,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 156,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 85,
+													"character": 15
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"id": 331,
+										"typeArguments": [
+											{
+												"type": "union",
+												"types": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													},
+													{
+														"type": "intrinsic",
+														"name": "null"
+													}
+												]
+											}
+										],
+										"name": "ValueAndPos"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 85,
+							"character": 8
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 92,
+						"name": "BoardReadable.find"
+					}
+				},
+				{
+					"id": 157,
+					"name": "findAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 158,
+							"name": "findAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 159,
+									"name": "check",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 160,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 161,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 162,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 163,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 86,
+													"character": 18
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 331,
+									"typeArguments": [
+										{
+											"type": "union",
+											"types": [
+												{
+													"type": "typeParameter",
+													"name": "T"
+												},
+												{
+													"type": "intrinsic",
+													"name": "null"
+												}
+											]
+										}
+									],
+									"name": "ValueAndPos"
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 86,
+							"character": 11
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 99,
+						"name": "BoardReadable.findAll"
+					}
+				},
+				{
+					"id": 126,
+					"name": "forEach",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 127,
+							"name": "forEach",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 128,
+									"name": "callback",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 129,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 130,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 131,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 132,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 80,
+													"character": 21
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 80,
+							"character": 11
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 68,
+						"name": "BoardReadable.forEach"
+					}
+				},
+				{
+					"id": 164,
+					"name": "getFromDrection",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 165,
+							"name": "getFromDrection",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 166,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								},
+								{
+									"id": 167,
+									"name": "direction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 47,
+										"name": "Direction"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"id": 331,
+										"typeArguments": [
+											{
+												"type": "union",
+												"types": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													},
+													{
+														"type": "intrinsic",
+														"name": "null"
+													}
+												]
+											}
+										],
+										"name": "ValueAndPos"
+									},
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									}
+								]
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 107,
+								"name": "BoardReadable.getFromDrection"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 87,
+							"character": 19
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 106,
+						"name": "BoardReadable.getFromDrection"
+					}
+				},
+				{
+					"id": 133,
+					"name": "getValue",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 134,
+							"name": "getValue",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 135,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									},
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									}
+								]
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 76,
+								"name": "BoardReadable.getValue"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 81,
+							"character": 12
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 75,
+						"name": "BoardReadable.getValue"
+					}
+				},
+				{
+					"id": 136,
+					"name": "getValueFromXY",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 137,
+							"name": "getValueFromXY",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 138,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 57,
+										"name": "X"
+									}
+								},
+								{
+									"id": 139,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 61,
+										"name": "Y"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									},
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									}
+								]
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 79,
+								"name": "BoardReadable.getValueFromXY"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 82,
+							"character": 18
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 78,
+						"name": "BoardReadable.getValueFromXY"
+					}
+				},
+				{
+					"id": 168,
+					"name": "indexToPos",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 169,
+							"name": "indexToPos",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 170,
+									"name": "index",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 4,
+								"name": "Pos"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 111,
+								"name": "BoardReadable.indexToPos"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 88,
+							"character": 14
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 110,
+						"name": "BoardReadable.indexToPos"
+					}
+				},
+				{
+					"id": 171,
+					"name": "posToIndex",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 172,
+							"name": "posToIndex",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 173,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 114,
+								"name": "BoardReadable.posToIndex"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 89,
+							"character": 14
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 113,
+						"name": "BoardReadable.posToIndex"
+					}
+				},
+				{
+					"id": 143,
+					"name": "some",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 144,
+							"name": "some",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 145,
+									"name": "check",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 146,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 147,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 148,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 149,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 84,
+													"character": 15
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 84,
+							"character": 8
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 85,
+						"name": "BoardReadable.some"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						122
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						121,
+						119,
+						120
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						174,
+						140,
+						150,
+						157,
+						126,
+						164,
+						133,
+						136,
+						168,
+						171,
+						143
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/board/board.d.ts",
+					"line": 65,
+					"character": 30
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"id": 64,
+					"typeArguments": [
+						{
+							"type": "typeParameter",
+							"name": "T"
+						}
+					],
+					"name": "BoardReadable"
+				}
+			]
+		},
+		{
+			"id": 255,
+			"name": "BoardMutable",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"typeParameter": [
+				{
+					"id": 256,
+					"name": "T",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {
+						"isExported": true
+					}
+				}
+			],
+			"children": [
+				{
+					"id": 258,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 259,
+							"name": "new BoardMutable",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 260,
+									"name": "boardCore",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 116,
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											}
+										],
+										"name": "BoardCore"
+									}
+								},
+								{
+									"id": 261,
+									"name": "skipCopy",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true,
+										"isOptional": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 328,
+										"name": "SkipCopy"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 255,
+								"name": "BoardMutable"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 141,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 257,
+					"name": "boardCore",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 141,
+							"character": 13
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 116,
+						"typeArguments": [
+							{
+								"type": "typeParameter",
+								"name": "T"
+							}
+						],
+						"name": "BoardCore"
+					}
+				},
+				{
+					"id": 262,
+					"name": "xSize",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"getSignature": [
+						{
+							"id": 263,
+							"name": "__get",
+							"kind": 524288,
+							"kindString": "Get signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 143,
+							"character": 13
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 66,
+						"name": "BoardReadable.xSize"
+					}
+				},
+				{
+					"id": 264,
+					"name": "ySize",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"getSignature": [
+						{
+							"id": 265,
+							"name": "__get",
+							"kind": 524288,
+							"kindString": "Get signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 144,
+							"character": 13
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 67,
+						"name": "BoardReadable.ySize"
+					}
+				},
+				{
+					"id": 287,
+					"name": "copy",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 288,
+							"name": "copy",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "reference",
+								"id": 176,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "Board"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 156,
+							"character": 8
+						}
+					]
+				},
+				{
+					"id": 284,
+					"name": "exists",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 285,
+							"name": "exists",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 286,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 83,
+								"name": "BoardReadable.exists"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 155,
+							"character": 10
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 82,
+						"name": "BoardReadable.exists"
+					}
+				},
+				{
+					"id": 296,
+					"name": "find",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 297,
+							"name": "find",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 298,
+									"name": "check",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 299,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 300,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 301,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 302,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 158,
+													"character": 15
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"id": 331,
+										"typeArguments": [
+											{
+												"type": "union",
+												"types": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													},
+													{
+														"type": "intrinsic",
+														"name": "null"
+													}
+												]
+											}
+										],
+										"name": "ValueAndPos"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 158,
+							"character": 8
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 92,
+						"name": "BoardReadable.find"
+					}
+				},
+				{
+					"id": 303,
+					"name": "findAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 304,
+							"name": "findAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 305,
+									"name": "check",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 306,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 307,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 308,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 309,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 159,
+													"character": 18
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 331,
+									"typeArguments": [
+										{
+											"type": "union",
+											"types": [
+												{
+													"type": "typeParameter",
+													"name": "T"
+												},
+												{
+													"type": "intrinsic",
+													"name": "null"
+												}
+											]
+										}
+									],
+									"name": "ValueAndPos"
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 159,
+							"character": 11
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 99,
+						"name": "BoardReadable.findAll"
+					}
+				},
+				{
+					"id": 270,
+					"name": "forEach",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 271,
+							"name": "forEach",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 272,
+									"name": "callback",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 273,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 274,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 275,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 276,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 152,
+													"character": 21
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 152,
+							"character": 11
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 68,
+						"name": "BoardReadable.forEach"
+					}
+				},
+				{
+					"id": 310,
+					"name": "getFromDrection",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 311,
+							"name": "getFromDrection",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 312,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								},
+								{
+									"id": 313,
+									"name": "direction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 47,
+										"name": "Direction"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"id": 331,
+										"typeArguments": [
+											{
+												"type": "union",
+												"types": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													},
+													{
+														"type": "intrinsic",
+														"name": "null"
+													}
+												]
+											}
+										],
+										"name": "ValueAndPos"
+									},
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									}
+								]
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 107,
+								"name": "BoardReadable.getFromDrection"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 160,
+							"character": 19
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 106,
+						"name": "BoardReadable.getFromDrection"
+					}
+				},
+				{
+					"id": 277,
+					"name": "getValue",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 278,
+							"name": "getValue",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 279,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									},
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									}
+								]
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 76,
+								"name": "BoardReadable.getValue"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 153,
+							"character": 12
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 75,
+						"name": "BoardReadable.getValue"
+					}
+				},
+				{
+					"id": 280,
+					"name": "getValueFromXY",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 281,
+							"name": "getValueFromXY",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 282,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 57,
+										"name": "X"
+									}
+								},
+								{
+									"id": 283,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 61,
+										"name": "Y"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									},
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									}
+								]
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 79,
+								"name": "BoardReadable.getValueFromXY"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 154,
+							"character": 18
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 78,
+						"name": "BoardReadable.getValueFromXY"
+					}
+				},
+				{
+					"id": 314,
+					"name": "indexToPos",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 315,
+							"name": "indexToPos",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 316,
+									"name": "index",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 4,
+								"name": "Pos"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 111,
+								"name": "BoardReadable.indexToPos"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 161,
+							"character": 14
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 110,
+						"name": "BoardReadable.indexToPos"
+					}
+				},
+				{
+					"id": 317,
+					"name": "posToIndex",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 318,
+							"name": "posToIndex",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 319,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 114,
+								"name": "BoardReadable.posToIndex"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 162,
+							"character": 14
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 113,
+						"name": "BoardReadable.posToIndex"
+					}
+				},
+				{
+					"id": 266,
+					"name": "put",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 267,
+							"name": "put",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "盤を更新する"
+							},
+							"parameters": [
+								{
+									"id": 268,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								},
+								{
+									"id": 269,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "T"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 255,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "BoardMutable"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 151,
+							"character": 7
+						}
+					]
+				},
+				{
+					"id": 289,
+					"name": "some",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 290,
+							"name": "some",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 291,
+									"name": "check",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 292,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 293,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 294,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 295,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 157,
+													"character": 15
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 157,
+							"character": 8
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"id": 85,
+						"name": "BoardReadable.some"
+					}
+				},
+				{
+					"id": 325,
+					"name": "toImmutable",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 326,
+							"name": "toImmutable",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "reference",
+								"id": 176,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "Board"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 164,
+							"character": 15
+						}
+					]
+				},
+				{
+					"id": 320,
+					"name": "empty",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 321,
+							"name": "empty",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"typeParameter": [
+								{
+									"id": 322,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {
+										"isExported": true
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 323,
+									"name": "xSize",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 324,
+									"name": "ySize",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 255,
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									}
+								],
+								"name": "BoardMutable"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 163,
+							"character": 16
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						258
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						257
+					]
+				},
+				{
+					"title": "Accessors",
+					"kind": 262144,
+					"children": [
+						262,
+						264
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						287,
+						284,
+						296,
+						303,
+						270,
+						310,
+						277,
+						280,
+						314,
+						317,
+						266,
+						289,
+						325,
+						320
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/board/board.d.ts",
+					"line": 140,
+					"character": 33
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"id": 64,
+					"typeArguments": [
+						{
+							"type": "typeParameter",
+							"name": "T"
+						}
+					],
+					"name": "BoardReadable"
+				}
+			]
+		},
+		{
+			"id": 398,
+			"name": "Event",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 399,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 402,
+							"name": "new Event",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 403,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 4,
+										"name": "Pos"
+									}
+								},
+								{
+									"id": 404,
+									"name": "disk",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 395,
+										"name": "Disk"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 398,
+								"name": "Event"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 191,
+							"character": 13
+						}
+					]
+				},
+				{
+					"id": 401,
+					"name": "disk",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isConstructorProperty": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 192,
+							"character": 54
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 395,
+						"name": "Disk"
+					}
+				},
+				{
+					"id": 400,
+					"name": "pos",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isConstructorProperty": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 192,
+							"character": 26
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 4,
+						"name": "Pos"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						399
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						401,
+						400
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 191,
+					"character": 11
+				}
+			]
+		},
+		{
+			"id": 337,
+			"name": "Game",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 338,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Use `Game.init ()` instead of the constructor to start the game."
+					},
+					"signatures": [
+						{
+							"id": 343,
+							"name": "new Game",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Use `Game.init ()` instead of the constructor to start the game."
+							},
+							"parameters": [
+								{
+									"id": 344,
+									"name": "turn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"id": 395,
+										"name": "Disk"
+									}
+								},
+								{
+									"id": 345,
+									"name": "board",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"id": 176,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 395,
+												"name": "Disk"
+											}
+										],
+										"name": "Board"
+									}
+								},
+								{
+									"id": 346,
+									"name": "winner",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "null if no win or loss has been decide"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"id": 395,
+												"name": "Disk"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"defaultValue": "null"
+								},
+								{
+									"id": 347,
+									"name": "_eventList",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "history\n"
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"id": 398,
+											"name": "Event"
+										}
+									},
+									"defaultValue": "[]"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 337,
+								"name": "Game"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 10,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 340,
+					"name": "board",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isConstructorProperty": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 22,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 176,
+						"typeArguments": [
+							{
+								"type": "reference",
+								"id": 395,
+								"name": "Disk"
+							}
+						],
+						"name": "Board"
+					}
+				},
+				{
+					"id": 339,
+					"name": "turn",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isConstructorProperty": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 21,
+							"character": 17
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 395,
+						"name": "Disk"
+					}
+				},
+				{
+					"id": 341,
+					"name": "winner",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isConstructorProperty": true,
+						"isReadonly": true
+					},
+					"comment": {
+						"shortText": "null if no win or loss has been decide"
+					},
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 23,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"id": 395,
+								"name": "Disk"
+							},
+							{
+								"type": "intrinsic",
+								"name": "null"
+							}
+						]
+					}
+				},
+				{
+					"id": 352,
+					"name": "isGameOver",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Whether the win or loss has been decided"
+					},
+					"getSignature": [
+						{
+							"id": 353,
+							"name": "__get",
+							"kind": 524288,
+							"kindString": "Get signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Whether the win or loss has been decided"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 60,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 350,
+					"name": "score",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {
+						"isExported": true
+					},
+					"getSignature": [
+						{
+							"id": 351,
+							"name": "__get",
+							"kind": 524288,
+							"kindString": "Get signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "reference",
+								"id": 405,
+								"name": "Score"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 43,
+							"character": 11
+						}
+					]
+				},
+				{
+					"id": 354,
+					"name": "getTunableDiskPosList",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 355,
+							"name": "getTunableDiskPosList",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 356,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								},
+								{
+									"id": 357,
+									"name": "disk",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 395,
+										"name": "Disk"
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 4,
+									"name": "Pos"
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 64,
+							"character": 23
+						}
+					]
+				},
+				{
+					"id": 358,
+					"name": "getTunableDiskPosListFromXY",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 359,
+							"name": "getTunableDiskPosListFromXY",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 360,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"name": "board2d.X"
+									}
+								},
+								{
+									"id": 361,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"name": "board2d.Y"
+									}
+								},
+								{
+									"id": 362,
+									"name": "disk",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 395,
+										"name": "Disk"
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 4,
+									"name": "Pos"
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 94,
+							"character": 29
+						}
+					]
+				},
+				{
+					"id": 379,
+					"name": "hasTurnableDiskPos",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 380,
+							"name": "hasTurnableDiskPos",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Is there a place to put the disk?"
+							},
+							"parameters": [
+								{
+									"id": 381,
+									"name": "disk",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 395,
+										"name": "Disk"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 162,
+							"character": 20
+						}
+					]
+				},
+				{
+					"id": 363,
+					"name": "isPlaced",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 364,
+							"name": "isPlaced",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Whether the disk is placed in the passed position"
+							},
+							"parameters": [
+								{
+									"id": 365,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 102,
+							"character": 10
+						}
+					]
+				},
+				{
+					"id": 366,
+					"name": "isPlacedFromXY",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 367,
+							"name": "isPlacedFromXY",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Whether the disk is placed in the passed position"
+							},
+							"parameters": [
+								{
+									"id": 368,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"name": "board2d.X"
+									}
+								},
+								{
+									"id": 369,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "board2d.Y"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 111,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 370,
+					"name": "placeDisk",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 371,
+							"name": "placeDisk",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Place a disk",
+								"text": "The result is returned in callback.\nConditions that cause an error in callback\n- The type of disk and the turn do not match\n- The position where the disk cannot be placed is specified"
+							},
+							"parameters": [
+								{
+									"id": 372,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"id": 4,
+										"name": "Pos"
+									}
+								},
+								{
+									"id": 373,
+									"name": "disk",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"id": 395,
+										"name": "Disk"
+									}
+								},
+								{
+									"id": 374,
+									"name": "callback",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true,
+										"isOptional": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 375,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 376,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 377,
+																	"name": "e",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "union",
+																		"types": [
+																			{
+																				"type": "reference",
+																				"name": "Error"
+																			},
+																			{
+																				"type": "intrinsic",
+																				"name": "null"
+																			}
+																		]
+																	}
+																},
+																{
+																	"id": 378,
+																	"name": "game",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true,
+																		"isOptional": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 337,
+																		"name": "Game"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 126,
+							"character": 11
+						}
+					]
+				},
+				{
+					"id": 382,
+					"name": "placeDiskFromXY",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 383,
+							"name": "placeDiskFromXY",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Place a disk with x and y"
+							},
+							"parameters": [
+								{
+									"id": 384,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"name": "board2d.X"
+									}
+								},
+								{
+									"id": 385,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"name": "board2d.Y"
+									}
+								},
+								{
+									"id": 386,
+									"name": "disk",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"id": 395,
+										"name": "Disk"
+									}
+								},
+								{
+									"id": 387,
+									"name": "callback",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true,
+										"isOptional": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 388,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 389,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {
+																"isExported": true
+															},
+															"parameters": [
+																{
+																	"id": 390,
+																	"name": "e",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true
+																	},
+																	"type": {
+																		"type": "union",
+																		"types": [
+																			{
+																				"type": "reference",
+																				"name": "Error"
+																			},
+																			{
+																				"type": "intrinsic",
+																				"name": "null"
+																			}
+																		]
+																	}
+																},
+																{
+																	"id": 391,
+																	"name": "game",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {
+																		"isExported": true,
+																		"isOptional": true
+																	},
+																	"type": {
+																		"type": "reference",
+																		"id": 337,
+																		"name": "Game"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 173,
+							"character": 17
+						}
+					]
+				},
+				{
+					"id": 392,
+					"name": "boardToString",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 393,
+							"name": "boardToString",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Convert board to string (for debugging)"
+							},
+							"parameters": [
+								{
+									"id": 394,
+									"name": "board",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "reference",
+										"id": 176,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 395,
+												"name": "Disk"
+											}
+										],
+										"name": "Board"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 181,
+							"character": 22
+						}
+					]
+				},
+				{
+					"id": 348,
+					"name": "init",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 349,
+							"name": "init",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Start the game"
+							},
+							"type": {
+								"type": "reference",
+								"id": 337,
+								"name": "Game"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 30,
+							"character": 13
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						338
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						340,
+						339,
+						341
+					]
+				},
+				{
+					"title": "Accessors",
+					"kind": 262144,
+					"children": [
+						352,
+						350
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						354,
+						358,
+						379,
+						363,
+						366,
+						370,
+						382,
+						392,
+						348
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 10,
+					"character": 17
+				}
+			]
+		},
+		{
+			"id": 4,
+			"name": "Pos",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "位置(不変)"
+			},
+			"children": [
+				{
+					"id": 7,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 8,
+							"name": "new Pos",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 9,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 57,
+										"name": "X"
+									}
+								},
+								{
+									"id": 10,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 61,
+										"name": "Y"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 4,
+								"name": "Pos"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 35,
+							"character": 18
+						}
+					]
+				},
+				{
+					"id": 5,
+					"name": "x",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 34,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 57,
+						"name": "X"
+					},
+					"implementationOf": {
+						"type": "reference",
+						"id": 2,
+						"name": "PosReadable.x"
+					}
+				},
+				{
+					"id": 6,
+					"name": "y",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 35,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 61,
+						"name": "Y"
+					},
+					"implementationOf": {
+						"type": "reference",
+						"id": 3,
+						"name": "PosReadable.y"
+					}
+				},
+				{
+					"id": 11,
+					"name": "add",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 12,
+							"name": "add",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 13,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 4,
+								"name": "Pos"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 37,
+							"character": 7
+						}
+					]
+				},
+				{
+					"id": 18,
+					"name": "addDirection",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 19,
+							"name": "addDirection",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "方向を加えた位置を取得する",
+								"text": "現在(x, y) = (0, 0)にいる場合\nup なら    ( 0, -1)\ndown なら  ( 0,  1)\nright なら ( 1,  0)\nleft なら  (-1,  0)"
+							},
+							"parameters": [
+								{
+									"id": 20,
+									"name": "direction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "reference",
+										"id": 47,
+										"name": "Direction"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 4,
+								"name": "Pos"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 49,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 14,
+					"name": "addXY",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 15,
+							"name": "addXY",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 16,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 57,
+										"name": "X"
+									}
+								},
+								{
+									"id": 17,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 61,
+										"name": "Y"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 4,
+								"name": "Pos"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 38,
+							"character": 9
+						}
+					]
+				},
+				{
+					"id": 24,
+					"name": "createFromDirection",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 25,
+							"name": "createFromDirection",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 26,
+									"name": "direction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 47,
+										"name": "Direction"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 4,
+								"name": "Pos"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 51,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 21,
+					"name": "createFromPos",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 22,
+							"name": "createFromPos",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 23,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 4,
+								"name": "Pos"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 50,
+							"character": 24
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						7
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						5,
+						6
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						11,
+						18,
+						14,
+						24,
+						21
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+					"line": 33,
+					"character": 24
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"id": 1,
+					"name": "PosReadable"
+				}
+			]
+		},
+		{
+			"id": 27,
+			"name": "PosMutable",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "位置"
+			},
+			"children": [
+				{
+					"id": 30,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 31,
+							"name": "new PosMutable",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 32,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 57,
+										"name": "X"
+									}
+								},
+								{
+									"id": 33,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 61,
+										"name": "Y"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 27,
+								"name": "PosMutable"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 58,
+							"character": 9
+						}
+					]
+				},
+				{
+					"id": 28,
+					"name": "x",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 57,
+							"character": 5
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 57,
+						"name": "X"
+					},
+					"implementationOf": {
+						"type": "reference",
+						"id": 2,
+						"name": "PosReadable.x"
+					}
+				},
+				{
+					"id": 29,
+					"name": "y",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 58,
+							"character": 5
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 61,
+						"name": "Y"
+					},
+					"implementationOf": {
+						"type": "reference",
+						"id": 3,
+						"name": "PosReadable.y"
+					}
+				},
+				{
+					"id": 34,
+					"name": "add",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 35,
+							"name": "add",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 36,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 27,
+								"name": "PosMutable"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 60,
+							"character": 7
+						}
+					]
+				},
+				{
+					"id": 41,
+					"name": "addDirection",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 42,
+							"name": "addDirection",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "方向を加えた位置を取得する",
+								"text": "現在(x, y) = (0, 0)にいる場合\nup なら    ( 0, -1)\ndown なら  ( 0,  1)\nright なら ( 1,  0)\nleft なら  (-1,  0)"
+							},
+							"parameters": [
+								{
+									"id": 43,
+									"name": "direction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "reference",
+										"id": 47,
+										"name": "Direction"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 27,
+								"name": "PosMutable"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 72,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 37,
+					"name": "addXY",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 38,
+							"name": "addXY",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 39,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 57,
+										"name": "X"
+									}
+								},
+								{
+									"id": 40,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 61,
+										"name": "Y"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 27,
+								"name": "PosMutable"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 61,
+							"character": 9
+						}
+					]
+				},
+				{
+					"id": 44,
+					"name": "createFromPos",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true,
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 45,
+							"name": "createFromPos",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 46,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 27,
+								"name": "PosMutable"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 73,
+							"character": 24
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						30
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						28,
+						29
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						34,
+						41,
+						37,
+						44
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+					"line": 56,
+					"character": 31
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"id": 1,
+					"name": "PosReadable"
+				}
+			]
+		},
+		{
+			"id": 405,
+			"name": "Score",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 406,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 409,
+							"name": "new Score",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 410,
+									"name": "lightCount",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 411,
+									"name": "darkCount",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 405,
+								"name": "Score"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 197,
+							"character": 13
+						}
+					]
+				},
+				{
+					"id": 408,
+					"name": "darkCount",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isConstructorProperty": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 198,
+							"character": 61
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 407,
+					"name": "lightCount",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isConstructorProperty": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 198,
+							"character": 33
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 415,
+					"name": "winner",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {
+						"isExported": true
+					},
+					"getSignature": [
+						{
+							"id": 416,
+							"name": "__get",
+							"kind": 524288,
+							"kindString": "Get signature",
+							"flags": {
+								"isExported": true
+							},
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"id": 395,
+										"name": "Disk"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 205,
+							"character": 12
+						}
+					]
+				},
+				{
+					"id": 412,
+					"name": "getDiskCount",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 413,
+							"name": "getDiskCount",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 414,
+									"name": "disk",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 395,
+										"name": "Disk"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/index.ts",
+							"line": 201,
+							"character": 14
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						406
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						408,
+						407
+					]
+				},
+				{
+					"title": "Accessors",
+					"kind": 262144,
+					"children": [
+						415
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						412
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/index.ts",
+					"line": 197,
+					"character": 11
+				}
+			]
+		},
+		{
+			"id": 64,
+			"name": "BoardReadable",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"typeParameter": [
+				{
+					"id": 65,
+					"name": "T",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {
+						"isExported": true
+					}
+				}
+			],
+			"children": [
+				{
+					"id": 66,
+					"name": "xSize",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 14,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 67,
+					"name": "ySize",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 15,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 82,
+					"name": "exists",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 83,
+							"name": "exists",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "指定した位置に駒があるかどうかを取得する",
+								"text": "駒がある場合はtrueを返す。\n駒がない、または、位置が盤の外側の場合、falseを返す。"
+							},
+							"parameters": [
+								{
+									"id": 84,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 52,
+							"character": 10
+						}
+					]
+				},
+				{
+					"id": 92,
+					"name": "find",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 93,
+							"name": "find",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 94,
+									"name": "check",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 95,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 96,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 97,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 98,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 54,
+													"character": 15
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"id": 331,
+										"typeArguments": [
+											{
+												"type": "union",
+												"types": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													},
+													{
+														"type": "intrinsic",
+														"name": "null"
+													}
+												]
+											}
+										],
+										"name": "ValueAndPos"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 54,
+							"character": 8
+						}
+					]
+				},
+				{
+					"id": 99,
+					"name": "findAll",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 100,
+							"name": "findAll",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 101,
+									"name": "check",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 102,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 103,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 104,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 105,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 55,
+													"character": 18
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 331,
+									"typeArguments": [
+										{
+											"type": "union",
+											"types": [
+												{
+													"type": "typeParameter",
+													"name": "T"
+												},
+												{
+													"type": "intrinsic",
+													"name": "null"
+												}
+											]
+										}
+									],
+									"name": "ValueAndPos"
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 55,
+							"character": 11
+						}
+					]
+				},
+				{
+					"id": 68,
+					"name": "forEach",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 69,
+							"name": "forEach",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "callback関数を、盤上の各セルに対して一度ずつ実行する"
+							},
+							"parameters": [
+								{
+									"id": 70,
+									"name": "callback",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 71,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 72,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 73,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 74,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 20,
+													"character": 21
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 20,
+							"character": 11
+						}
+					]
+				},
+				{
+					"id": 106,
+					"name": "getFromDrection",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 107,
+							"name": "getFromDrection",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "posからdirectionの方向に1歩進んだ場所を取得する"
+							},
+							"parameters": [
+								{
+									"id": 108,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								},
+								{
+									"id": 109,
+									"name": "direction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "reference",
+										"id": 47,
+										"name": "Direction"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"id": 331,
+										"typeArguments": [
+											{
+												"type": "union",
+												"types": [
+													{
+														"type": "typeParameter",
+														"name": "T"
+													},
+													{
+														"type": "intrinsic",
+														"name": "null"
+													}
+												]
+											}
+										],
+										"name": "ValueAndPos"
+									},
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 61,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 75,
+					"name": "getValue",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 76,
+							"name": "getValue",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "指定した位置にある駒を取得する",
+								"text": "指定した位置が空の場合はnullを返す。盤の外側の場合はundefinedを返す。\n```javascript\nvar board = new board2d.Board<string>(2, 2).put(new board2d.Pos(1, 1), 'x');\nvar a = board.getValue(new board2d.Pos(1, 1)); // 'x'\nvar b = board.getValue(new board2d.Pos(0, 0)); // null\nvar c = board.getValue(new board2d.Pos(-1, -1)); // undefined\n```\n",
+								"returns": "空の場合はnullを返す。盤の外側の場合はundefinedを返す。\n"
+							},
+							"parameters": [
+								{
+									"id": 77,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									},
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 35,
+							"character": 12
+						}
+					]
+				},
+				{
+					"id": 78,
+					"name": "getValueFromXY",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 79,
+							"name": "getValueFromXY",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "指定した位置にある駒を取得する",
+								"text": "引数がx, yであること以外は、`getValue()`と同じ。",
+								"returns": "空の場合はnullを返す。盤の外側の場合、undefinedを返す。\n"
+							},
+							"parameters": [
+								{
+									"id": 80,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"id": 57,
+										"name": "X"
+									}
+								},
+								{
+									"id": 81,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {},
+									"type": {
+										"type": "reference",
+										"id": 61,
+										"name": "Y"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "typeParameter",
+										"name": "T"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									},
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 44,
+							"character": 18
+						}
+					]
+				},
+				{
+					"id": 110,
+					"name": "indexToPos",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 111,
+							"name": "indexToPos",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 112,
+									"name": "index",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 4,
+								"name": "Pos"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 62,
+							"character": 14
+						}
+					]
+				},
+				{
+					"id": 113,
+					"name": "posToIndex",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 114,
+							"name": "posToIndex",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 115,
+									"name": "pos",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reference",
+										"id": 1,
+										"name": "PosReadable"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 63,
+							"character": 14
+						}
+					]
+				},
+				{
+					"id": 85,
+					"name": "some",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isExported": true,
+						"isExternal": true
+					},
+					"signatures": [
+						{
+							"id": 86,
+							"name": "some",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {
+								"isExported": true
+							},
+							"parameters": [
+								{
+									"id": 87,
+									"name": "check",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 88,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"signatures": [
+												{
+													"id": 89,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {
+														"isExported": true
+													},
+													"parameters": [
+														{
+															"id": 90,
+															"name": "pos",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "reference",
+																"id": 4,
+																"name": "Pos"
+															}
+														},
+														{
+															"id": 91,
+															"name": "value",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isExported": true
+															},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "T"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node_modules/board2d/dist/board/board.d.ts",
+													"line": 53,
+													"character": 15
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 53,
+							"character": 8
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						66,
+						67
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						82,
+						92,
+						99,
+						68,
+						106,
+						75,
+						78,
+						110,
+						113,
+						85
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/board/board.d.ts",
+					"line": 13,
+					"character": 30
+				}
+			],
+			"implementedBy": [
+				{
+					"type": "reference",
+					"id": 176,
+					"name": "Board"
+				},
+				{
+					"type": "reference",
+					"id": 116,
+					"name": "BoardCore"
+				},
+				{
+					"type": "reference",
+					"id": 255,
+					"name": "BoardMutable"
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "PosReadable",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "位置"
+			},
+			"children": [
+				{
+					"id": 2,
+					"name": "x",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 27,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 57,
+						"name": "X"
+					}
+				},
+				{
+					"id": 3,
+					"name": "y",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true,
+						"isExternal": true,
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+							"line": 28,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 61,
+						"name": "Y"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						2,
+						3
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+					"line": 26,
+					"character": 28
+				}
+			],
+			"implementedBy": [
+				{
+					"type": "reference",
+					"id": 4,
+					"name": "Pos"
+				},
+				{
+					"type": "reference",
+					"id": 27,
+					"name": "PosMutable"
+				}
+			]
+		},
+		{
+			"id": 328,
+			"name": "SkipCopy",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "コピーを省略するフラグ\nboolean型の拡張"
+			},
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/board/board.d.ts",
+					"line": 10,
+					"character": 28
+				}
+			],
+			"type": {
+				"type": "intersection",
+				"types": [
+					{
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					{
+						"type": "reflection",
+						"declaration": {
+							"id": 329,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"children": [
+								{
+									"id": 330,
+									"name": "[SkipCopyNominality]",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true,
+										"isExternal": true
+									},
+									"sources": [
+										{
+											"fileName": "node_modules/board2d/dist/board/board.d.ts",
+											"line": 11,
+											"character": 24
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "never"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										330
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/board2d/dist/board/board.d.ts",
+									"line": 10,
+									"character": 40
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": 331,
+			"name": "ValueAndPos",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"typeParameter": [
+				{
+					"id": 332,
+					"name": "T",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {
+						"isExported": true
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/board/board.d.ts",
+					"line": 166,
+					"character": 31
+				}
+			],
+			"type": {
+				"type": "reflection",
+				"declaration": {
+					"id": 333,
+					"name": "__type",
+					"kind": 65536,
+					"kindString": "Type literal",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 334,
+							"name": "pos",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isReadonly": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/board2d/dist/board/board.d.ts",
+									"line": 167,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 4,
+								"name": "Pos"
+							}
+						},
+						{
+							"id": 335,
+							"name": "value",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true,
+								"isExternal": true,
+								"isReadonly": true
+							},
+							"sources": [
+								{
+									"fileName": "node_modules/board2d/dist/board/board.d.ts",
+									"line": 168,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "T"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								334,
+								335
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node_modules/board2d/dist/board/board.d.ts",
+							"line": 166,
+							"character": 36
+						}
+					]
+				}
+			}
+		},
+		{
+			"id": 57,
+			"name": "X",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "X座標\nnumber型の拡張"
+			},
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+					"line": 9,
+					"character": 21
+				}
+			],
+			"type": {
+				"type": "intersection",
+				"types": [
+					{
+						"type": "intrinsic",
+						"name": "number"
+					},
+					{
+						"type": "reflection",
+						"declaration": {
+							"id": 58,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"children": [
+								{
+									"id": 59,
+									"name": "[XNominality]",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true,
+										"isExternal": true
+									},
+									"sources": [
+										{
+											"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+											"line": 10,
+											"character": 17
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "never"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										59
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+									"line": 9,
+									"character": 32
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": 61,
+			"name": "Y",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {
+				"isExported": true,
+				"isExternal": true
+			},
+			"comment": {
+				"shortText": "Y座標\nnumber型の拡張"
+			},
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+					"line": 20,
+					"character": 21
+				}
+			],
+			"type": {
+				"type": "intersection",
+				"types": [
+					{
+						"type": "intrinsic",
+						"name": "number"
+					},
+					{
+						"type": "reflection",
+						"declaration": {
+							"id": 62,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {
+								"isExported": true
+							},
+							"children": [
+								{
+									"id": 63,
+									"name": "[YNominality]",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true,
+										"isExternal": true
+									},
+									"sources": [
+										{
+											"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+											"line": 21,
+											"character": 17
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "never"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										63
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node_modules/board2d/dist/pos/pos.d.ts",
+									"line": 20,
+									"character": 32
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": 336,
+			"name": "version",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isExternal": true,
+				"isConst": true
+			},
+			"comment": {
+				"shortText": "盤ライブラリ\nバージョン: 1.1.0"
+			},
+			"sources": [
+				{
+					"fileName": "node_modules/board2d/dist/index.d.ts",
+					"line": 5,
+					"character": 28
+				}
+			],
+			"type": {
+				"type": "stringLiteral",
+				"value": "1.1.0"
+			},
+			"defaultValue": "\"1.1.0\""
+		}
+	],
+	"groups": [
+		{
+			"title": "Enumerations",
+			"kind": 4,
+			"children": [
+				47,
+				395
+			]
+		},
+		{
+			"title": "Classes",
+			"kind": 128,
+			"children": [
+				176,
+				116,
+				255,
+				398,
+				337,
+				4,
+				27,
+				405
+			]
+		},
+		{
+			"title": "Interfaces",
+			"kind": 256,
+			"children": [
+				64,
+				1
+			]
+		},
+		{
+			"title": "Type aliases",
+			"kind": 4194304,
+			"children": [
+				328,
+				331,
+				57,
+				61
+			]
+		},
+		{
+			"title": "Variables",
+			"kind": 32,
+			"children": [
+				336
+			]
+		}
+	]
+}

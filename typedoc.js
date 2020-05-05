@@ -1,15 +1,15 @@
 module.exports = {
-  out: './docs',
+  out: './docs/typedoc',
   name: 'reversi',
-  // readme: 'none',
+  readme: 'readme.md',
   target: 'ES6',
-  includes: './',
-  exclude: './node_modules/typescript/**',
-  mode: 'modules',
+  includes: './src',
+  exclude: ['./node_modules/typescript/**', './node_modules/@babel/**', './node_modules/@types/**'],
+  mode: 'file',
   //excludeExternals: true,
   //excludeNotExported: true,
   excludePrivate: true,
   includeDeclarations: true,
-  externalPattern: 'node_modules/@types/board2d/dist/index.d',
-  json: './docs/docs.json'
+  theme: 'minimal',
+  json: './docs/typedoc/docs.json'
 };
