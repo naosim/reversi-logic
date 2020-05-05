@@ -7,8 +7,15 @@ Reversi game logic library. UI is not included.
 - Update method returns result in callback
 
 # install
+## npm
 ```
 npm install reversi-logic
+```
+
+## browser
+in html
+```html
+<script src="https://naosim.github.io/reversi-logic/reversi.js"></script>
 ```
 
 # import
