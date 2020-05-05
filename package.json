@@ -19,7 +19,9 @@
   },
   "scripts": {
     "test": "parcel build --no-minify --public-url ./  test/concat.ts --out-dir test/dist  --target node --bundle-node-modules && jest",
-    "build": "./node_modules/typescript/bin/tsc",
+    "build": "npm run ts:build && npm run browser:build",
+    "ts:build": "./node_modules/typescript/bin/tsc",
+    "browser:build": "parcel build --no-minify --public-url ./ --out-file reversi.js  src/index.ts --out-dir docs --global reversi",
     "docs": "./node_modules/typedoc/bin/typedoc && node json2js.js"
   },
   "repository": {

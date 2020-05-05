@@ -1,4 +1,5 @@
 import * as board2d from 'board2d';
+export { Board, BoardMutable, Pos, Direction } from 'board2d';
 export declare class Game {
     readonly turn: Disk;
     readonly board: board2d.Board<Disk>;
@@ -82,4 +83,3 @@ declare class Score {
     getDiskCount(disk: Disk): number;
     get winner(): Disk | null;
 }
-export {};

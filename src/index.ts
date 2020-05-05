@@ -1,5 +1,12 @@
 import * as board2d from 'board2d';
 
+export {
+  Board,
+  BoardMutable,
+  Pos,
+  Direction
+} from 'board2d';
+
 export class Game {
   /**
    * 
