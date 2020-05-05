@@ -1,15 +1,13 @@
 import * as board2d from 'board2d';
-// export * from 'board2d';
 export class Game {
     /**
-     * コンストラクタ
      *
-     * ゲームを始める際は`Game.init()`を使ってください。
+     * Use `Game.init ()` instead of the constructor to start the game.
      *
-     * @param turn 出番
-     * @param board 盤
-     * @param winner 勝者 決まってない場合はnull
-     * @param _eventList 履歴
+     * @param turn
+     * @param board
+     * @param winner null if no win or loss has been decide
+     * @param _eventList history
      */
     constructor(turn, board, winner = null, _eventList = []) {
         this.turn = turn;
@@ -18,7 +16,7 @@ export class Game {
         this._eventList = _eventList;
     }
     /**
-     * ゲームを始める
+     * Start the game
      */
     static init() {
         var board = board2d.BoardMutable.empty(8, 8)
@@ -43,7 +41,7 @@ export class Game {
         return new Score(lightCount, darkCount);
     }
     /**
-     * 決着がついたかどうか
+     * Whether the win or loss has been decided
      */
     get isGameOver() {
         return this.winner != null;
@@ -71,7 +69,7 @@ export class Game {
                 currentPos = currentPos.add(d);
                 i++;
                 if (i > 20)
-                    throw new Error("無限ループ");
+                    throw new Error("infinite loop");
             }
             return this.board.getValue(currentPos) === disk ? result : [];
         }).reduce((memo, list) => memo.concat(list), []);
@@ -80,14 +78,14 @@ export class Game {
         return this.getTunableDiskPosList(new board2d.Pos(x, y), disk);
     }
     /**
-     * 指定の位置にすでに石があるか
+     * Whether the disk is placed in the passed position
      * @param pos
      */
     isPlaced(pos) {
         return this.board.exists(pos);
     }
     /**
-     * 指定の位置にすでに石があるか
+     * Whether the disk is placed in the passed position
      * @param x
      * @param y
      */
@@ -95,11 +93,12 @@ export class Game {
         return this.isPlaced(new board2d.Pos(x, y));
     }
     /**
-     * 石を置く。結果はcallbackで返る
+     * Place a disk
      *
-     * コールバックでエラーになる条件
-     * - 石の種類と出番が合っていない
-     * - 石を置けない位置を指定している
+     * The result is returned in callback.
+     * Conditions that cause an error in callback
+     * - The type of disk and the turn do not match
+     * - The position where the disk cannot be placed is specified
      * @param pos
      * @param disk
      * @param callback
@@ -107,12 +106,12 @@ export class Game {
     placeDisk(pos, disk, callback) {
         callback = callback || ((e, game) => { });
         if (this.turn != disk) {
-            callback(new Error('順番が違います'));
+            callback(new Error('The turn is different'));
             return;
         }
         var list = this.getTunableDiskPosList(pos, disk);
         if (list.length == 0) {
-            callback(new Error('置けません'));
+            callback(new Error('Cannot be placed'));
             return;
         }
         var newBoard = this.board.toMutable();
@@ -123,7 +122,7 @@ export class Game {
         var nextTurn = this.turn == Disk.light ? Disk.dark : Disk.light;
         var winner = null;
         var preGame = new Game(nextTurn, newBoard.toImmutable(), winner, newEventList);
-        if (preGame.hasTurnableDiskPos(nextTurn)) { // 次のターンにひっくり返す場所がある
+        if (preGame.hasTurnableDiskPos(nextTurn)) {
             callback(null, preGame);
             return;
         }
@@ -131,19 +130,19 @@ export class Game {
             callback(null, new Game(this.turn, newBoard.toImmutable(), winner, newEventList));
             return;
         }
-        else { // 勝者決定
+        else { // winner decided
             callback(null, new Game(nextTurn, newBoard.toImmutable(), preGame.score.winner, newEventList));
             return;
         }
     }
     /**
-     * ディスクを置ける場所があるか？
+     * Is there a place to put the disk?
      */
     hasTurnableDiskPos(disk) {
         return this.board.some((pos, _) => this.getTunableDiskPosList(pos, disk).length > 0);
     }
     /**
-     * 石を置く。結果はcallbackで返る
+     * Place a disk with x and y
      * @param x
      * @param y
      * @param disk
@@ -153,16 +152,13 @@ export class Game {
         return this.placeDisk(new board2d.Pos(x, y), disk, callback);
     }
     /**
-     * 盤を文字列に変換する(デバッグ用)
+     * Convert board to string (for debugging)
      * @param board
      */
     static boardToString(board) {
         return board.toMutable().boardCore.values.map(row => row.map(v => v || '_').join('')).join('\n');
     }
 }
-/**
- * ディスク
- */
 export var Disk;
 (function (Disk) {
     Disk["light"] = "l";
@@ -179,12 +175,12 @@ class Score {
         this.lightCount = lightCount;
         this.darkCount = darkCount;
     }
-    getDiscCount(disk) {
+    getDiskCount(disk) {
         return disk === Disk.light ? this.lightCount : this.darkCount;
     }
     get winner() {
         if (this.lightCount == this.darkCount) {
-            return null; // 引き分け
+            return null; // draw
         }
         return this.lightCount > this.darkCount ? Disk.light : Disk.dark;
     }
