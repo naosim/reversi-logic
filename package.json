@@ -1,0 +1,39 @@
+{
+  "name": "reversi-logic",
+  "version": "1.0.0",
+  "description": "Reversi game logic library. UI is not included.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "dependencies": {
+    "board2d": "1.x"
+  },
+  "devDependencies": {
+    "jest": "^25.5.4",
+    "parcel-bundler": "^1.12.4",
+    "typedoc": "^0.17.6",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "test": "parcel build --no-minify --public-url ./  test/concat.ts --out-dir test/dist  --target node --bundle-node-modules && jest",
+    "build": "./node_modules/typescript/bin/tsc",
+    "docs": "./node_modules/typedoc/bin/typedoc && node json2js.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naosim/reversi-logic.git"
+  },
+  "keywords": [
+    "game",
+    "logic"
+  ],
+  "author": "naosim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/naosim/reversi-logic/issues"
+  },
+  "homepage": "https://github.com/naosim/reversi-logic#readme"
+}
