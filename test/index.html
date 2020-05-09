@@ -96,7 +96,10 @@ class TypedocJsonClassToMarkdownConvertor {
 
   typeToText(type) {
     if(type.type == 'array') {
-      return `${type.elementType.name}[]`
+      if(type.elementType.type == 'reflection' || type.elementType.type == 'union') {
+        return `(${this.typeToText(type.elementType)})[]`
+      }
+      return `${this.typeToText(type.elementType)}[]`
     }
     if(type.type == 'reflection') {
       // console.log(type);
@@ -114,7 +117,7 @@ class TypedocJsonClassToMarkdownConvertor {
     if(property.type) {
       type = this.typeToText(property.type);
     } else if(property.getSignature) {
-      type = property.getSignature[0].type.name;
+      type = this.typeToText(property.getSignature[0].type);
     }
     var result = `- ${property.name}: ${type}`;
     if(property.comment) {

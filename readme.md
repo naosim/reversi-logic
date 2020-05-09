@@ -63,6 +63,10 @@ game.placeDisk({x: 4, y: 2}, reversi.Disk.light, (e, nextGame) => {
 
 # main classes
 ## Game
+Reversi game class
+
+entry point
+
 ### Constructors
 - **constructor** (turn: Disk, board: Board, winner: Disk | null, _eventList: Event[]): Game   
   Use `Game.init ()` instead of the constructor to start the game.
@@ -98,25 +102,39 @@ game.placeDisk({x: 4, y: 2}, reversi.Disk.light, (e, nextGame) => {
   Start the game
 
 ## Board
+Two-dimensional board
 ### Constructors
 - **constructor** (boardCore: BoardCore, skipCopy: SkipCopy): Board
 ### Properties
-- values: undefined  
+- values: (null | T)[][]  
   Two-dimensional array as raw data on the board
+  
+  returns:
+  Return a copy. Updating the returned value does not affect the board.
+  
 - xSize: number
 - ySize: number
 ### Methods
 - **copy** (): Board
 - **exists** (pos: PosReadable): boolean   
   whether there is a piece at the specified position
+  
+  returns:
+  Returns true if there is a piece. Returns false if there is no a piece or the position is outside of the board.
 - **find** (check: (pos: Pos, value: T | null) => boolean): ValueAndPos | null
 - **findAll** (check: (pos: Pos, value: T | null) => boolean): ValueAndPos[]
 - **forEach** (callback: (pos: Pos, value: T | null) => void): void   
   executes a provided function once for each positions on the board.
 - **getValue** (pos: PosReadable): T | null | undefined   
   Get the piece at the specified position
+  
+  returns:
+  Returns null if the specified position is empty. Returns undefined if outside the board.
 - **getValueWithDirection** (pos: PosReadable, direction: Direction): ValueAndPos | undefined   
   Get a piece that is one step ahead in the direction from position.
+  
+  returns:
+  Returns true if there is a piece. Returns false if there is no a piece or the position is outside of the board.
 - **getValueWithXY** (x: X, y: Y): T | null | undefined
 - **indexToPos** (index: number): Pos
 - **posToIndex** (pos: PosReadable): number
