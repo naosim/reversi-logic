@@ -43,6 +43,9 @@ class TypedocJsonClassToMarkdownConvertor {
   }
   toMarkdown(nest) {
     var lines = [`${this.h(nest)} ${this.classData.name}`];
+    if(this.classData.comment) {
+      lines = [...lines, ...TypedocJsonClassToMarkdownConvertor.commentToLines(this.classData.comment)];
+    }
     var groups = this.classData.groups.reduce((memo, v) => {
       memo[v.title] = v.children;
       return memo;
