@@ -112,7 +112,7 @@ class TypedocJsonClassToMarkdownConvertor {
     }
     var result = `- ${property.name}: ${type}`;
     if(property.comment) {
-      result += '\n' + this.nestLines(TypedocJsonClassToMarkdownConvertor.commentToLines(property.comment), 1);
+      result += '  \n' + this.nestLines(TypedocJsonClassToMarkdownConvertor.commentToLines(property.comment), 1);
     }
     return result;
   }
@@ -160,7 +160,7 @@ class TypedocJsonClassToMarkdownConvertor {
     var returnType = this.typeToText(detail.type);
     var comment = this.nestLines(TypedocJsonClassToMarkdownConvertor.methodDescription(method, this.childRepository), 1);
     var text = `
-- **${method.name}** ${this.functionParamAndReturnToText(detail)} ${method.flags.isStatic ? '[static]' : ''}
+- **${method.name}** ${this.functionParamAndReturnToText(detail)} ${method.flags.isStatic ? '[static]' : ''}  
 ${comment}
     `.trim();
     return text;
