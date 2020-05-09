@@ -1,6 +1,6 @@
 {
   "name": "reversi-logic",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Reversi game logic library. UI is not included.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
