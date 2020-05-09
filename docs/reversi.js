@@ -126,7 +126,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.Direction = exports.PosMutable = exports.Pos = void 0;
 
 /**
- * 位置(不変)
+ * Position on the board (immutable)
  */
 class Pos {
   constructor(x, y) {
@@ -142,13 +142,13 @@ class Pos {
     return new Pos(this.x + x, this.y + y);
   }
   /**
-   * 方向を加えた位置を取得する
+   *  Get the position moved one step in the specified direction
    *
-   * 現在(x, y) = (0, 0)にいる場合
-   * up なら    ( 0, -1)
-   * down なら  ( 0,  1)
-   * right なら ( 1,  0)
-   * left なら  (-1,  0)
+   * If you are currently at (x, y) = (0, 0):
+   * up    is  ( 0, -1)
+   * down  is  ( 0,  1)
+   * right is  ( 1,  0)
+   * left  is  (-1,  0)
    * @param direction
    */
 
@@ -185,7 +185,9 @@ class Pos {
 
 }
 /**
- * 位置
+ * Position on the board (mutable)
+ *
+ * Use of pos class is recommended, but it is used when the processing speed and memory usage efficiency are required.
  */
 
 
@@ -206,17 +208,6 @@ class PosMutable {
     this.y = this.y + y;
     return this;
   }
-  /**
-   * 方向を加えた位置を取得する
-   *
-   * 現在(x, y) = (0, 0)にいる場合
-   * up なら    ( 0, -1)
-   * down なら  ( 0,  1)
-   * right なら ( 1,  0)
-   * left なら  (-1,  0)
-   * @param direction
-   */
-
 
   addDirection(direction) {
     return this.add(Pos.createFromDirection(direction));
@@ -227,10 +218,6 @@ class PosMutable {
   }
 
 }
-/**
- * 方向
- */
-
 
 exports.PosMutable = PosMutable;
 var Direction;
@@ -277,13 +264,7 @@ var _poses, _boardCore;
 
 class BoardCore {
   /**
-   * 盤のサイズを指定してインスタンスを生成します。下記は3x3の盤を作っています。
-   * ```javascript
-   * var board = new board2d.Board<string>(3, 3);
-   * ```
-   *
-   * @param xSize
-   * @param ySize
+   * Create with board size.
    */
   constructor(xSize, ySize) {
     this.xSize = xSize;
@@ -307,8 +288,17 @@ class BoardCore {
   getValue(pos) {
     return this.getValueFromXY(pos.x, pos.y);
   }
+  /**
+   * @deprecated
+   * @ignore
+   */
+
 
   getValueFromXY(x, y) {
+    return this.getValueWithXY(x, y);
+  }
+
+  getValueWithXY(x, y) {
     if (x < 0 || y < 0) {
       return undefined;
     }
@@ -328,7 +318,7 @@ class BoardCore {
     for (var y = 0; y < this.ySize; y++) {
       for (var x = 0; x < this.xSize; x++) {
         if (check(__classPrivateFieldGet(this, _poses)[y][x], this.values[y][x])) {
-          return true; // 1つでも見つかったら即返す
+          return true;
         }
       }
     }
@@ -343,7 +333,7 @@ class BoardCore {
           return {
             pos: __classPrivateFieldGet(this, _poses)[y][x],
             value: this.values[y][x]
-          }; // 1つでも見つかったら即返す
+          };
         }
       }
     }
@@ -367,8 +357,17 @@ class BoardCore {
 
     return result;
   }
+  /**
+   * @deprecated
+   * @ignore
+   */
+
 
   getFromDrection(pos, direction) {
+    return this.getValueWithDirection(pos, direction);
+  }
+
+  getValueWithDirection(pos, direction) {
     var p = _pos.Pos.createFromPos(pos).addDirection(direction);
 
     var v = this.getValue(p);
@@ -410,11 +409,7 @@ class BoardCore {
 exports.BoardCore = BoardCore;
 _poses = new WeakMap();
 /**
- * 盤
- *
- * 2次元配列のラッパークラス
- * 空のセルにはnullが入っている
- *
+ * Two-dimensional board
  */
 
 class Board {
@@ -432,9 +427,9 @@ class Board {
     return __classPrivateFieldGet(this, _boardCore).ySize;
   }
   /**
-   * 盤面の生データ取得
+   * Two-dimensional array as raw data on the board
    *
-   * コピーを返す。要素を変更しても盤面には影響しない
+   * @return Return a copy. Updating the returned value does not affect the board.
    */
 
 
@@ -442,18 +437,7 @@ class Board {
     return __classPrivateFieldGet(this, _boardCore).copy().values;
   }
   /**
-   * 盤に駒を置く (イミュータブル)
-   * 盤上のセルに駒をおきます。下記では3x3の盤上の`(x, y)=(2, 2)`に`"x"`という駒を置いています。
-   * ```javascript
-   * var board = new board2d.Board<string>(3, 3);
-   * var newBoard = board.put(new board2d.Pos(2, 2), 'x'); // 駒を置く
-   * console.log(board.getValue(new board2d.Pos(2, 2)));    // null(空)
-   * console.log(newBoard.getValue(new board2d.Pos(2, 2))); // x
-   * ```
-   *
-   * メソッドの戻り値は駒を置いた結果の盤です。元のインスタンスは変更されません。そのため上記の例の場合、`board変数`の状態は変化しません。また引数の`value`に`null`を指定した場合、そのセルは空になります。
-   * @param pos
-   * @param value
+   * Put pieces on the board (immutable)
    */
 
 
@@ -463,8 +447,17 @@ class Board {
     newBoardCore.values[pos.y][pos.x] = value;
     return new Board(newBoardCore, true);
   }
+  /**
+   * @deprecated
+   * @ignore
+   */
+
 
   putFromXY(x, y, value) {
+    return this.put(new _pos.Pos(x, y), value);
+  }
+
+  putWithXY(x, y, value) {
     return this.put(new _pos.Pos(x, y), value);
   }
 
@@ -475,9 +468,18 @@ class Board {
   getValue(pos) {
     return __classPrivateFieldGet(this, _boardCore).getValue(pos);
   }
+  /**
+   * @deprecated
+   * @ignore
+   */
+
 
   getValueFromXY(x, y) {
-    return __classPrivateFieldGet(this, _boardCore).getValueFromXY(x, y);
+    return __classPrivateFieldGet(this, _boardCore).getValueWithXY(x, y);
+  }
+
+  getValueWithXY(x, y) {
+    return __classPrivateFieldGet(this, _boardCore).getValueWithXY(x, y);
   }
 
   exists(pos) {
@@ -499,9 +501,18 @@ class Board {
   findAll(check) {
     return __classPrivateFieldGet(this, _boardCore).findAll(check);
   }
+  /**
+   * @deprecated
+   * @ignore
+   */
+
 
   getFromDrection(pos, direction) {
-    return __classPrivateFieldGet(this, _boardCore).getFromDrection(pos, direction);
+    return __classPrivateFieldGet(this, _boardCore).getValueWithDirection(pos, direction);
+  }
+
+  getValueWithDirection(pos, direction) {
+    return __classPrivateFieldGet(this, _boardCore).getValueWithDirection(pos, direction);
   }
 
   indexToPos(index) {
@@ -524,6 +535,9 @@ class Board {
 
 exports.Board = Board;
 _boardCore = new WeakMap();
+/**
+ * Use of Board class is recommended, but it is used when the processing speed and memory usage efficiency are required.
+ */
 
 class BoardMutable {
   constructor(boardCore, skipCopy = false) {
@@ -538,10 +552,7 @@ class BoardMutable {
     return this.boardCore.ySize;
   }
   /**
-   * 盤を更新する
-   *
-   * @param pos
-   * @param value
+   * Put pieces on the board (mutable)
    */
 
 
@@ -557,9 +568,18 @@ class BoardMutable {
   getValue(pos) {
     return this.boardCore.getValue(pos);
   }
+  /**
+   * @deprecated
+   * @ignore
+   */
+
 
   getValueFromXY(x, y) {
-    return this.boardCore.getValueFromXY(x, y);
+    return this.boardCore.getValueWithXY(x, y);
+  }
+
+  getValueWithXY(x, y) {
+    return this.boardCore.getValueWithXY(x, y);
   }
 
   exists(pos) {
@@ -581,9 +601,18 @@ class BoardMutable {
   findAll(check) {
     return this.boardCore.findAll(check);
   }
+  /**
+   * @deprecated
+   * @ignore
+   */
+
 
   getFromDrection(pos, direction) {
-    return this.boardCore.getFromDrection(pos, direction);
+    return this.boardCore.getValueWithDirection(pos, direction);
+  }
+
+  getValueWithDirection(pos, direction) {
+    return this.boardCore.getValueWithDirection(pos, direction);
   }
 
   indexToPos(index) {
@@ -644,9 +673,9 @@ Object.keys(_board).forEach(function (key) {
 
 /**
  * 盤ライブラリ
- * バージョン: 1.1.0
+ * バージョン: 1.1.1
  */
-const version = '1.1.0';
+const version = '1.1.1';
 exports.version = version;
 },{"./pos/pos":"C988","./board/board":"tzAf"}],"QCba":[function(require,module,exports) {
 "use strict";
@@ -678,6 +707,18 @@ Object.defineProperty(exports, "Direction", {
     return board2d.Direction;
   }
 });
+Object.defineProperty(exports, "X", {
+  enumerable: true,
+  get: function () {
+    return board2d.X;
+  }
+});
+Object.defineProperty(exports, "Y", {
+  enumerable: true,
+  get: function () {
+    return board2d.Y;
+  }
+});
 exports.Disk = exports.Game = void 0;
 
 var board2d = _interopRequireWildcard(require("board2d"));
@@ -704,6 +745,11 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+/**
+ * Reversi game class
+ *
+ * entry point
+ */
 var Game = /*#__PURE__*/function () {
   /**
    *
@@ -801,8 +847,6 @@ var Game = /*#__PURE__*/function () {
   }, {
     key: "placeDisk",
     value: function placeDisk(pos, disk, callback) {
-      callback = callback || function (e, game) {};
-
       if (this.turn != disk) {
         callback(new Error('The turn is different'));
         return;

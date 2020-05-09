@@ -1,5 +1,10 @@
 import * as board2d from 'board2d';
-export { Board, BoardMutable, Pos, Direction } from 'board2d';
+export { Board, BoardMutable, Pos, Direction, X, Y } from 'board2d';
+/**
+ * Reversi game class
+ *
+ * entry point
+ */
 export declare class Game {
     readonly turn: Disk;
     readonly board: board2d.Board<Disk>;
@@ -48,7 +53,7 @@ export declare class Game {
      * @param disk
      * @param callback
      */
-    placeDisk(pos: board2d.Pos, disk: Disk, callback?: (e: Error | null, game?: Game) => void): void;
+    placeDisk(pos: board2d.Pos, disk: Disk, callback: (e: Error | null, game?: Game) => void): void;
     /**
      * Is there a place to put the disk?
      */
@@ -60,7 +65,7 @@ export declare class Game {
      * @param disk
      * @param callback
      */
-    placeDiskFromXY(x: board2d.X, y: board2d.Y, disk: Disk, callback?: (e: Error | null, game?: Game) => void): void;
+    placeDiskFromXY(x: board2d.X, y: board2d.Y, disk: Disk, callback: (e: Error | null, game?: Game) => void): void;
     /**
      * Convert board to string (for debugging)
      * @param board

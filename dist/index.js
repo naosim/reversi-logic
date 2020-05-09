@@ -1,5 +1,10 @@
 import * as board2d from 'board2d';
 export { Board, BoardMutable, Pos, Direction } from 'board2d';
+/**
+ * Reversi game class
+ *
+ * entry point
+ */
 export class Game {
     /**
      *
@@ -105,7 +110,6 @@ export class Game {
      * @param callback
      */
     placeDisk(pos, disk, callback) {
-        callback = callback || ((e, game) => { });
         if (this.turn != disk) {
             callback(new Error('The turn is different'));
             return;

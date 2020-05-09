@@ -2774,13 +2774,13 @@ img {
 					<a href="boardreadable.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-					<a href="boardreadable.html#getfromdrection" class="tsd-kind-icon">get<wbr>From<wbr>Drection</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
 					<a href="boardreadable.html#getvalue" class="tsd-kind-icon">get<wbr>Value</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-					<a href="boardreadable.html#getvaluefromxy" class="tsd-kind-icon">get<wbr>Value<wbr>FromXY</a>
+					<a href="boardreadable.html#getvaluewithdirection" class="tsd-kind-icon">get<wbr>Value<wbr>With<wbr>Direction</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a href="boardreadable.html#getvaluewithxy" class="tsd-kind-icon">get<wbr>Value<wbr>WithXY</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
 					<a href="boardreadable.html#indextopos" class="tsd-kind-icon">index<wbr>ToPos</a>
@@ -2857,9 +2857,9 @@ img {
 							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="boardreadable.html#find" class="tsd-kind-icon">find</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="boardreadable.html#findall" class="tsd-kind-icon">find<wbr>All</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="boardreadable.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="boardreadable.html#getfromdrection" class="tsd-kind-icon">get<wbr>From<wbr>Drection</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="boardreadable.html#getvalue" class="tsd-kind-icon">get<wbr>Value</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="boardreadable.html#getvaluefromxy" class="tsd-kind-icon">get<wbr>Value<wbr>FromXY</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="boardreadable.html#getvaluewithdirection" class="tsd-kind-icon">get<wbr>Value<wbr>With<wbr>Direction</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="boardreadable.html#getvaluewithxy" class="tsd-kind-icon">get<wbr>Value<wbr>WithXY</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="boardreadable.html#indextopos" class="tsd-kind-icon">index<wbr>ToPos</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="boardreadable.html#postoindex" class="tsd-kind-icon">pos<wbr>ToIndex</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="boardreadable.html#some" class="tsd-kind-icon">some</a></li>
@@ -2876,7 +2876,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">x<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in node_modules/board2d/dist/board/board.d.ts:14</li>
+						<li>Defined in node_modules/board2d/dist/board/board.d.ts:15</li>
 					</ul>
 				</aside>
 			</section>
@@ -2886,7 +2886,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">y<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in node_modules/board2d/dist/board/board.d.ts:15</li>
+						<li>Defined in node_modules/board2d/dist/board/board.d.ts:16</li>
 					</ul>
 				</aside>
 			</section>
@@ -2903,15 +2903,13 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in node_modules/board2d/dist/board/board.d.ts:52</li>
+								<li>Defined in node_modules/board2d/dist/board/board.d.ts:41</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>指定した位置に駒があるかどうかを取得する</p>
+								<p>whether there is a piece at the specified position</p>
 							</div>
-							<p>駒がある場合はtrueを返す。
-							駒がない、または、位置が盤の外側の場合、falseを返す。</p>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
@@ -2922,6 +2920,7 @@ img {
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						<p>Returns true if there is a piece. Returns false if there is no a piece or the position is outside of the board.</p>
 					</li>
 				</ul>
 			</section>
@@ -2935,7 +2934,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in node_modules/board2d/dist/board/board.d.ts:54</li>
+								<li>Defined in node_modules/board2d/dist/board/board.d.ts:47</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2979,7 +2978,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in node_modules/board2d/dist/board/board.d.ts:55</li>
+								<li>Defined in node_modules/board2d/dist/board/board.d.ts:48</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3023,12 +3022,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in node_modules/board2d/dist/board/board.d.ts:20</li>
+								<li>Defined in node_modules/board2d/dist/board/board.d.ts:21</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>callback関数を、盤上の各セルに対して一度ずつ実行する</p>
+								<p>executes a provided function once for each positions on the board.</p>
 							</div>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3065,39 +3064,6 @@ img {
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-				<a name="getfromdrection" class="tsd-anchor"></a>
-				<h3>get<wbr>From<wbr>Drection</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-					<li class="tsd-signature tsd-kind-icon">get<wbr>From<wbr>Drection<span class="tsd-signature-symbol">(</span>pos<span class="tsd-signature-symbol">: </span><a href="posreadable.html" class="tsd-signature-type">PosReadable</a>, direction<span class="tsd-signature-symbol">: </span><a href="../enums/direction.html" class="tsd-signature-type">Direction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#valueandpos" class="tsd-signature-type">ValueAndPos</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in node_modules/board2d/dist/board/board.d.ts:61</li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>posからdirectionの方向に1歩進んだ場所を取得する</p>
-							</div>
-						</div>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>pos: <a href="posreadable.html" class="tsd-signature-type">PosReadable</a></h5>
-							</li>
-							<li>
-								<h5>direction: <a href="../enums/direction.html" class="tsd-signature-type">Direction</a></h5>
-								<div class="tsd-comment tsd-typography">
-								</div>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="../globals.html#valueandpos" class="tsd-signature-type">ValueAndPos</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
 				<a name="getvalue" class="tsd-anchor"></a>
 				<h3>get<wbr>Value</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
@@ -3107,18 +3073,13 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in node_modules/board2d/dist/board/board.d.ts:35</li>
+								<li>Defined in node_modules/board2d/dist/board/board.d.ts:28</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>指定した位置にある駒を取得する</p>
+								<p>Get the piece at the specified position</p>
 							</div>
-							<p>指定した位置が空の場合はnullを返す。盤の外側の場合はundefinedを返す。</p>
-							<pre><code class="language-javascript"><span class="hljs-keyword">var</span> board = <span class="hljs-keyword">new</span> board2d.Board&lt;string&gt;(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>).put(<span class="hljs-keyword">new</span> board2d.Pos(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), <span class="hljs-string">'x'</span>);
-<span class="hljs-keyword">var</span> a = board.getValue(<span class="hljs-keyword">new</span> board2d.Pos(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)); <span class="hljs-comment">// 'x'</span>
-<span class="hljs-keyword">var</span> b = board.getValue(<span class="hljs-keyword">new</span> board2d.Pos(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)); <span class="hljs-comment">// null</span>
-<span class="hljs-keyword">var</span> c = board.getValue(<span class="hljs-keyword">new</span> board2d.Pos(<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>)); <span class="hljs-comment">// undefined</span></code></pre>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
@@ -3127,29 +3088,55 @@ img {
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
-						<p>空の場合はnullを返す。盤の外側の場合はundefinedを返す。</p>
+						<p>Returns null if the specified position is empty. Returns undefined if outside the board.</p>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-				<a name="getvaluefromxy" class="tsd-anchor"></a>
-				<h3>get<wbr>Value<wbr>FromXY</h3>
+				<a name="getvaluewithdirection" class="tsd-anchor"></a>
+				<h3>get<wbr>Value<wbr>With<wbr>Direction</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-					<li class="tsd-signature tsd-kind-icon">get<wbr>Value<wbr>FromXY<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><a href="../globals.html#x" class="tsd-signature-type">X</a>, y<span class="tsd-signature-symbol">: </span><a href="../globals.html#y" class="tsd-signature-type">Y</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Value<wbr>With<wbr>Direction<span class="tsd-signature-symbol">(</span>pos<span class="tsd-signature-symbol">: </span><a href="posreadable.html" class="tsd-signature-type">PosReadable</a>, direction<span class="tsd-signature-symbol">: </span><a href="../enums/direction.html" class="tsd-signature-type">Direction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#valueandpos" class="tsd-signature-type">ValueAndPos</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in node_modules/board2d/dist/board/board.d.ts:44</li>
+								<li>Defined in node_modules/board2d/dist/board/board.d.ts:60</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>指定した位置にある駒を取得する</p>
+								<p>Get a piece that is one step ahead in the direction from position.</p>
 							</div>
-							<p>引数がx, yであること以外は、<code>getValue()</code>と同じ。</p>
 						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>pos: <a href="posreadable.html" class="tsd-signature-type">PosReadable</a></h5>
+							</li>
+							<li>
+								<h5>direction: <a href="../enums/direction.html" class="tsd-signature-type">Direction</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../globals.html#valueandpos" class="tsd-signature-type">ValueAndPos</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						<p>Returns true if there is a piece. Returns false if there is no a piece or the position is outside of the board.</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+				<a name="getvaluewithxy" class="tsd-anchor"></a>
+				<h3>get<wbr>Value<wbr>WithXY</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Value<wbr>WithXY<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><a href="../globals.html#x" class="tsd-signature-type">X</a>, y<span class="tsd-signature-symbol">: </span><a href="../globals.html#y" class="tsd-signature-type">Y</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in node_modules/board2d/dist/board/board.d.ts:34</li>
+							</ul>
+						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -3160,7 +3147,6 @@ img {
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
-						<p>空の場合はnullを返す。盤の外側の場合、undefinedを返す。</p>
 					</li>
 				</ul>
 			</section>
@@ -3174,7 +3160,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in node_modules/board2d/dist/board/board.d.ts:62</li>
+								<li>Defined in node_modules/board2d/dist/board/board.d.ts:61</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3197,7 +3183,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in node_modules/board2d/dist/board/board.d.ts:63</li>
+								<li>Defined in node_modules/board2d/dist/board/board.d.ts:62</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3220,13 +3206,20 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in node_modules/board2d/dist/board/board.d.ts:53</li>
+								<li>Defined in node_modules/board2d/dist/board/board.d.ts:46</li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Tests whether at least one piece in the board passes the test implemented by the provided check function. It returns a Boolean value.</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>check: <span class="tsd-signature-symbol">(</span>pos<span class="tsd-signature-symbol">: </span><a href="../classes/pos.html" class="tsd-signature-type">Pos</a>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span></h5>
+								<div class="tsd-comment tsd-typography">
+								</div>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter-signature">
 										<ul class="tsd-signatures tsd-kind-type-literal">
