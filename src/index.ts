@@ -4,9 +4,16 @@ export {
   Board,
   BoardMutable,
   Pos,
-  Direction
+  Direction,
+  X,
+  Y
 } from 'board2d';
 
+/**
+ * Reversi game class
+ * 
+ * entry point
+ */
 export class Game {
   /**
    * 
@@ -123,8 +130,7 @@ export class Game {
    * @param disk 
    * @param callback 
    */
-  placeDisk(pos: board2d.Pos, disk: Disk, callback?: (e: Error | null, game?: Game)=>void) {
-    callback = callback || ((e:any | null, game?: Game) => {})
+  placeDisk(pos: board2d.Pos, disk: Disk, callback: (e: Error | null, game?: Game)=>void) {
     if(this.turn != disk) {
       callback(new Error('The turn is different'));
       return;
@@ -170,7 +176,7 @@ export class Game {
    * @param disk 
    * @param callback 
    */
-  placeDiskFromXY(x: board2d.X, y: board2d.Y, disk: Disk, callback?: (e: Error | null, game?: Game)=>void) {
+  placeDiskFromXY(x: board2d.X, y: board2d.Y, disk: Disk, callback: (e: Error | null, game?: Game)=>void) {
     return this.placeDisk(new board2d.Pos(x, y), disk, callback);
   }
 

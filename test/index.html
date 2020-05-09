@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<script src="../docs/reversi.js"></script>
+<script src="../docs/typedoc/docs.js"></script>
+<script>
+class ChildRepository {
+  #findByIdMap;
+  #findByNameMap;
+  constructor(data) {
+    this.#findByIdMap = {};
+    this.#findByNameMap = {};
+    ChildRepository.createFormData(data, this.#findByIdMap, this.#findByNameMap);
+  }
+  findById(id) {
+    return this.#findByIdMap[id]
+  }
+  findByName(name) {
+    return this.#findByNameMap[`key_${name}`]
+  }
+
+  static createFormData(data, findByIdMap, findByNameMap) {
+    if(data.id && data.name && typeof data == "object") {
+      findByIdMap[data.id] = data;
+      var key = `key_${data.name}`
+      if(!findByNameMap[key]) {
+        findByNameMap[key] = [];
+      }
+      findByNameMap[key].push(data);
+    }
+    if(typeof data !== "object") {
+      return 
+    }
+    Object.keys(data).forEach(key => {
+      ChildRepository.createFormData(data[key], findByIdMap, findByNameMap)
+    })
+  }
+}
+class TypedocJsonClassToMarkdownConvertor {
+  constructor(classDataJson, childRepository) {
+    this.classData = classDataJson;
+    this.childRepository = childRepository;
+    console.log(this.classData);
+  }
+  toMarkdown(nest) {
+    var lines = [`${this.h(nest)} ${this.classData.name}`];
+    var groups = this.classData.groups.reduce((memo, v) => {
+      memo[v.title] = v.children;
+      return memo;
+    }, {Constructors: [], Properties: [], Accessors: [], Methods: []})
+
+    if(groups.Constructors.length > 0) {
+      lines.push(`${this.h(nest + 1)} Constructors`)
+      groups.Constructors
+        .map(id => this.childRepository.findById(id))
+        .map(v => this.methodToText(v, 2))
+        .forEach(v => lines.push(v))
+    }
+    
+    if(groups.Properties.length > 0 || groups.Accessors.length > 0) {
+      lines.push(`${this.h(nest + 1)} Properties`);
+      if(groups.Properties.length > 0) {
+        groups.Properties.map(id => this.childRepository.findById(id)).map(v => this.propertyToText(v, 2)).forEach(v => lines.push(v));
+      }
+      if(groups.Accessors.length > 0) {
+        groups.Accessors.map(id => this.childRepository.findById(id)).map(v => this.propertyToText(v, 2)).forEach(v => lines.push(v));
+      }
+    }
+    
+    if(groups.Methods.length > 0) {
+      lines.push(`${this.h(nest + 1)} Methods`)
+      groups.Methods.map(id => this.childRepository.findById(id)).map(v => this.methodToText(v, 2)).forEach(v => lines.push(v))
+    }
+    
+    return lines.join('\n')
+  }
+
+  static commentToLines(comment) {
+    if(!comment) {
+      return []
+    }
+    var result = [...comment.shortText.split('\n')];
+    if(comment.text) {
+      result = [...result, '', ...comment.text.split('\n')]
+    }
+    if(result.length > 1) {
+      // console.log(result);
+    }
+    return result;
+  }
+
+  typeToText(type) {
+    if(type.type == 'array') {
+      return `${type.elementType.name}[]`
+    }
+    if(type.type == 'reflection') {
+      // console.log(type);
+      return this.functionParamAndReturnToText(type.declaration.signatures[0], true);
+    }
+    if(type.type == 'union') {
+      // console.log(type);
+      return type.types.map(v => v.name).join(' | ')
+    }
+    return type.name;
+  }
+
+  propertyToText(property) {
+    var type;
+    if(property.type) {
+      type = this.typeToText(property.type);
+    } else if(property.getSignature) {
+      type = property.getSignature[0].type.name;
+    }
+    var result = `- ${property.name}: ${type}`;
+    if(property.comment) {
+      result += '\n' + this.nestLines(TypedocJsonClassToMarkdownConvertor.commentToLines(property.comment), 1);
+    }
+    return result;
+  }
+
+  nestLines(lines, nestCount) {
+    // add blank line before and after code block
+    var count = 0;
+    lines = lines.reduce((memo, line, i) => {
+      if(line.indexOf('```') != -1) {
+        if(count % 2 == 0) {
+          if(i >= 1 && lines[i - 1].trim().length == 0) {
+            memo.push(line);
+          } else {
+            memo.push('');
+            memo.push(line);
+          }
+        } else {
+          if(i < lines.length - 1 && lines[i + 1].trim().length == 0) {
+            memo.push(line);
+          } else {
+            memo.push(line);
+            memo.push('');
+          }
+        }
+        count++;
+      } else {
+        memo.push(line);
+      }
+      return memo;
+    }, [])
+
+    var prefix = '                    '.slice(0, nestCount * 2);
+    return lines.map(v => prefix + v).join('\n');
+  }
+
+  functionParamAndReturnToText(signatures0, isArrowFunction) {
+    var returnType = this.typeToText(signatures0.type);
+    var params = !signatures0.parameters ? '' : signatures0.parameters.map(v => `${v.name}: ${this.typeToText(v.type)}`).join(', ')
+    return `(${params})${isArrowFunction ? ' =>' : ':'} ${returnType}`;
+  }
+  methodToText(method) {
+    var detail = method.signatures[0];
+    var params = !detail.parameters ? '' : detail.parameters.map(v => `${v.name}: ${this.typeToText(v.type)}`).join(', ')
+
+    var returnType = this.typeToText(detail.type);
+    var comment = this.nestLines(TypedocJsonClassToMarkdownConvertor.methodDescription(method, this.childRepository), 1);
+    var text = `
+- **${method.name}** ${this.functionParamAndReturnToText(detail)} ${method.flags.isStatic ? '[static]' : ''}
+${comment}
+    `.trim();
+    return text;
+  }
+  
+  static methodDescription(method, repository) {
+    var detail = method.signatures[0];
+    var comment = TypedocJsonClassToMarkdownConvertor.commentToLines(detail.comment);
+    if(comment.length == 0) {
+      if(method.implementationOf) {
+        return TypedocJsonClassToMarkdownConvertor.methodDescription(repository.findById(method.implementationOf.id, repository))
+      }
+      return []
+    }
+    return comment;
+  }
+
+  h(num) {
+    return '##########'.slice(0, num);
+  }
+}
+
+class TypedocJsonToMarkdownConvertor {
+  constructor(dataJson, childRepository) {
+    this.data = dataJson;
+    this.childRepository = childRepository;
+  }
+  toMarkdown(targetName, nest = 1) {    
+    var text = new TypedocJsonClassToMarkdownConvertor(this.childRepository.findByName(targetName)[0], this.childRepository).toMarkdown(nest);
+    return text;
+  }
+}
+
+var convertor = new TypedocJsonToMarkdownConvertor(data, new ChildRepository(data));
+var text = ['Game', 'Board'].map(v => convertor.toMarkdown(v, 2)).join('\n\n');
+console.log(text);
+</script>
